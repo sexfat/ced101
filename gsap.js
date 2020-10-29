@@ -89,7 +89,8 @@ $('.btn_play').on('click', function(){
 })
 
 var tl3 = new TimelineMax({
-    onComplete : alertA
+    onComplete : alertA,
+    repeat : 1
 })
 
 
@@ -103,6 +104,9 @@ tl3.to('.b1' , 1 , {
 }).to('.b1' , 1 , {
     y: 200
 })
+
+
+
 
 
 

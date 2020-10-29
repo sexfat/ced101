@@ -188,5 +188,32 @@ new ScrollMagic.Scene({
 
 
 
+var parallaxs = new TimelineMax();
+
+var p1 = TweenMax.to('.e1' , 1 , {  y: '-10%'});
+var p2 = TweenMax.to('.e2' , 1 , {  y: '-200%'});
+var p3 = TweenMax.to('.e3' , 1 , {  y: '-100%'});
+
+parallaxs.add([p1 , p2 , p3]);
+
+
+
+
+new ScrollMagic.Scene({
+    triggerElement: '#key04',
+    //offset : 0,// 改綠指標(單位px)
+    triggerHook: 0.3, // 改藍色指標  0~1
+    duration : '100%' //單位是px or %  動畫執行的範圍
+    //reverse: true // 動畫執行返回
+
+}).setTween(parallaxs).addIndicators().on('enter', function () {
+    console.log('滾動視差');
+}).addTo(controller);
+
+
+
+
+
+
 
 

@@ -76,56 +76,43 @@ var tl01 = new TimelineMax({
 
 
 
-$('.btn_play').on('click', function(){
-    
+$('.btn_play').on('click', function () {
+
     var tl02 = new TimelineMax();
 
     tl02.to('.box08', 1, {
         x: 100
     }).to('.box08', 1, {
         y: 100
-    }).to('.box08' , 1 , {
+    }).to('.box08', 1, {
         x: 300
-    }).to('.box08' , 1 , {
-        scale : 2
+    }).to('.box08', 1, {
+        scale: 2
     })
 })
 
 var tl3 = new TimelineMax({
-    onComplete : alertA, //callback function
-    repeat : 1
+    //onComplete: alertA, //callback function
+    repeat: 1
 })
 
 
 function alertA() {
-    alert('完成') 
+    alert('完成')
 }
 
 
-tl3.to('.b1' , 1 , {
+tl3.to('.b1', 1, {
     x: 100
-}).to('.b1' , 1 , {
+}).to('.b1', 1, {
     y: 200
 })
 
 
 var mv01 = new ScrollMagic.Scene({
-       triggerElement : '#key01'    
+    triggerElement: '#key01',
+    offset : 150,// 改綠指標(單位px)
+    triggerHook: 0.8 // 改藍色指標  0~1
+
+
 }).setTween(tl3).addIndicators().addTo(controller);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

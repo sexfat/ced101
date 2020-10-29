@@ -9,9 +9,6 @@ body {
     height: 80px;
     background-color: #00ffaa;
     border-radius: 6px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
 }
 
 
@@ -36,6 +33,11 @@ section {
    width: 100vw;
    height: 100vh;
 }
+
+/* #key01 {
+    position: relative;
+    top: 150px
+} */
 
 .section02{
     background-color: rgb(218, 218, 218);

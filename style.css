@@ -39,12 +39,15 @@ section {
     top: 150px
 } */
 
-.section02{
+.section02 , .section04{
     background-color: rgb(218, 218, 218);
 }
 
 
 
 
-.section03{}
+.section03.on {
+    transition: all .8s ease-in-out;
+    background-color: rgb(255, 136, 0);
+}
 .section04{}

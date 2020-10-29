@@ -111,9 +111,11 @@ tl3.fromTo('.b1', 1, {
 }).to('.b1', 1, {
     y: 200
 }).to('.b1' , 1 , {
-   x: 200,
+   x: 1500,
    rotation: 360,
    scale: 1.5 
+}).to('.b1' , 1, {
+    opacity: 0
 })
 
 
@@ -121,9 +123,22 @@ var mv01 = new ScrollMagic.Scene({
     triggerElement: '#key01',
     offset : 0,// 改綠指標(單位px)
     triggerHook: 0.5, // 改藍色指標  0~1
-    //duration : '50%' //單位是px or %  動畫執行的範圍
+    duration : '50%' //單位是px or %  動畫執行的範圍
 
 
 }).setTween(tl3).addIndicators().on('leave' ,function(){
    console.log('執行function');   
+}).addTo(controller);
+
+
+
+var mv02 = new ScrollMagic.Scene({
+    triggerElement: '#key02',
+    //offset : 0,// 改綠指標(單位px)
+    //triggerHook: 0.5, // 改藍色指標  0~1
+    //duration : '50%' //單位是px or %  動畫執行的範圍
+
+
+}).setClassToggle('.section03' , 'on').addIndicators().on('leave' ,function(){
+   console.log('執行function02');   
 }).addTo(controller);

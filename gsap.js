@@ -93,7 +93,7 @@ $('.btn_play').on('click', function () {
 
 var tl3 = new TimelineMax({
     //onComplete: alertA, //callback function
-    repeat: 1
+    //repeat: 1
 })
 
 
@@ -102,10 +102,18 @@ function alertA() {
 }
 
 
-tl3.to('.b1', 1, {
-    x: 100
+tl3.fromTo('.b1', 1, {
+    x: 0,
+    opacity: 0
+},{
+     x: 100,
+     opacity: 1
 }).to('.b1', 1, {
     y: 200
+}).to('.b1' , 1 , {
+   x: 200,
+   rotation: 360,
+   scale: 1.5 
 })
 
 
@@ -113,7 +121,7 @@ var mv01 = new ScrollMagic.Scene({
     triggerElement: '#key01',
     offset : 0,// 改綠指標(單位px)
     triggerHook: 0.5, // 改藍色指標  0~1
-    duration : '10%' //單位是px or %
+    //duration : '50%' //單位是px or %  動畫執行的範圍
 
 
 }).setTween(tl3).addIndicators().on('leave' ,function(){

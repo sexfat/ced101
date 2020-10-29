@@ -1,3 +1,6 @@
+var controller = new ScrollMagic.Controller();
+
+
 TweenMax.to('.box01', 2, {
     //y: 200,
     //x: 100,
@@ -89,7 +92,7 @@ $('.btn_play').on('click', function(){
 })
 
 var tl3 = new TimelineMax({
-    //onComplete : alertA, //callback function
+    onComplete : alertA, //callback function
     repeat : 1
 })
 
@@ -104,6 +107,13 @@ tl3.to('.b1' , 1 , {
 }).to('.b1' , 1 , {
     y: 200
 })
+
+
+var mv01 = new ScrollMagic.Scene({
+       triggerElement : '#key01'    
+}).setTween(tl3).addIndicators().addTo(controller);
+
+
 
 
 

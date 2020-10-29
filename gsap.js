@@ -115,4 +115,6 @@ var mv01 = new ScrollMagic.Scene({
     triggerHook: 0.8 // 改藍色指標  0~1
 
 
-}).setTween(tl3).addIndicators().addTo(controller);
+}).setTween(tl3).addIndicators().on('start' ,function(){
+   console.log('完成');   
+}).addTo(controller);

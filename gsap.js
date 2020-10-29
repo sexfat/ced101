@@ -111,10 +111,11 @@ tl3.to('.b1', 1, {
 
 var mv01 = new ScrollMagic.Scene({
     triggerElement: '#key01',
-    offset : 150,// 改綠指標(單位px)
-    triggerHook: 0.8 // 改藍色指標  0~1
+    offset : 0,// 改綠指標(單位px)
+    triggerHook: 0.5, // 改藍色指標  0~1
+    duration : '10%' //單位是px or %
 
 
-}).setTween(tl3).addIndicators().on('start' ,function(){
-   console.log('完成');   
+}).setTween(tl3).addIndicators().on('leave' ,function(){
+   console.log('執行function');   
 }).addTo(controller);

@@ -105,34 +105,34 @@ function alertA() {
 tl3.fromTo('.b1', 1, {
     x: 0,
     opacity: 0
-},{
-     x: 100,
-     opacity: 1
+}, {
+    x: 100,
+    opacity: 1
 }).to('.b1', 1, {
     y: 200
-}).to('.b1' , 1 , {
-   x: 1500,
-   rotation: 360,
-   scale: 1.5 
-}).to('.b1' , 1, {
+}).to('.b1', 1, {
+    x: 1500,
+    rotation: 360,
+    scale: 1.5
+}).to('.b1', 1, {
     opacity: 0
 })
 
 
 var mv01 = new ScrollMagic.Scene({
     triggerElement: '#key01',
-    offset : 0,// 改綠指標(單位px)
+    offset: 0, // 改綠指標(單位px)
     triggerHook: 0.5, // 改藍色指標  0~1
-    duration : '50%' //單位是px or %  動畫執行的範圍
+    duration: '50%' //單位是px or %  動畫執行的範圍
 
 
-}).setTween(tl3).addIndicators().on('leave' ,function(){
-   console.log('執行function');   
+}).setTween(tl3).addIndicators().on('leave', function () {
+    console.log('執行function');
 }).addTo(controller);
 
 //第二個場景
 
-var tweenmax_c1 =  TweenMax.to('.c1' , 1 , {
+var tweenmax_c1 = TweenMax.to('.c1', 1, {
     y: 200,
     x: 100
 })
@@ -141,10 +141,52 @@ var tweenmax_c1 =  TweenMax.to('.c1' , 1 , {
 var mv02 = new ScrollMagic.Scene({
     triggerElement: '#key02',
     //offset : 0,// 改綠指標(單位px)
-    triggerHook: 0.3, // 改藍色指標  0~1
+    //triggerHook: 0.3, // 改藍色指標  0~1
     //duration : '50%' //單位是px or %  動畫執行的範圍
-    reverse : true // 動畫執行返回
+    reverse: true // 動畫執行返回
 
-}).setClassToggle('.section03' , 'on').setTween(tweenmax_c1).addIndicators().on('enter' ,function(){
-   console.log('執行function02');
+}).setClassToggle('.section03', 'on').setTween(tweenmax_c1).addIndicators().on('enter', function () {
+    console.log('執行function02');
 }).addTo(controller);
+
+
+
+var text_pin = new TimelineMax();
+
+text_pin.fromTo('.d1', 1, {
+    x: 0,
+    opacity: 0
+}, {
+    x: 300,
+    opacity: 1
+}).fromTo('.d2', 1, {
+    x: 0,
+    opacity: 0
+}, {
+    x: 400,
+      opacity: 1 
+}).fromTo('.d3', 1, {
+    x: 0,
+    opacity: 0
+}, {
+    x: 500,
+    opacity: 1 
+});
+
+
+var mv03 = new ScrollMagic.Scene({
+    triggerElement: '#key03',
+    //offset : 0,// 改綠指標(單位px)
+    triggerHook: 0, // 改藍色指標  0~1
+    duration : '300%' //單位是px or %  動畫執行的範圍
+    //reverse: true // 動畫執行返回
+
+}).setPin('.section04').setTween(text_pin).addIndicators().on('enter', function () {
+    console.log('執行場景pin');
+}).addTo(controller);
+
+
+
+
+
+

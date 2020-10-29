@@ -50,4 +50,10 @@ section {
     transition: all .8s ease-in-out;
     background-color: rgb(255, 136, 0);
 }
+
+.text {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 .section04{}

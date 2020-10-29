@@ -88,6 +88,26 @@ $('.btn_play').on('click', function(){
     })
 })
 
+var tl3 = new TimelineMax({
+    onComplete : alertA
+})
+
+
+function alertA() {
+    alert('完成') 
+}
+
+
+tl3.to('.b1' , 1 , {
+    x: 100
+}).to('.b1' , 1 , {
+    y: 200
+})
+
+
+
+
+
 
 
 

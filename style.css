@@ -9,19 +9,21 @@ body {
     height: 80px;
     background-color: #00ffaa;
     border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 
 
 .box01 {
    position: relative;
-   top: 100px;
+   top: 50px;
    left: 300px
 }
 .box03 {
     position: relative;
     border-radius: 20px;
-    top: 300px;
+    top: 50px;
     left: 300px;
     /* width: 300px; */
  }
@@ -29,3 +31,18 @@ body {
 /* .box04 {
     opacity: 0;
 }  */
+
+section {
+   width: 100vw;
+   height: 100vh;
+}
+
+.section02{
+    background-color: rgb(218, 218, 218);
+}
+
+
+
+
+.section03{}
+.section04{}

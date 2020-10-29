@@ -119,7 +119,7 @@ tl3.fromTo('.b1', 1, {
 })
 
 
-var mv01 = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
     triggerElement: '#key01',
     offset: 0, // 改綠指標(單位px)
     triggerHook: 0.5, // 改藍色指標  0~1
@@ -138,7 +138,7 @@ var tweenmax_c1 = TweenMax.to('.c1', 1, {
 })
 
 
-var mv02 = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
     triggerElement: '#key02',
     //offset : 0,// 改綠指標(單位px)
     //triggerHook: 0.3, // 改藍色指標  0~1
@@ -174,7 +174,7 @@ text_pin.fromTo('.d1', 1, {
 });
 
 
-var mv03 = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
     triggerElement: '#key03',
     //offset : 0,// 改綠指標(單位px)
     triggerHook: 0, // 改藍色指標  0~1

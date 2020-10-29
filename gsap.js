@@ -197,18 +197,98 @@ var p3 = TweenMax.to('.e3' , 1 , {  y: '-100%'});
 parallaxs.add([p1 , p2 , p3]);
 
 
+//========給同學==========//
 
 
-new ScrollMagic.Scene({
-    triggerElement: '#key04',
-    //offset : 0,// 改綠指標(單位px)
-    triggerHook: 0.3, // 改藍色指標  0~1
-    duration : '100%' //單位是px or %  動畫執行的範圍
-    //reverse: true // 動畫執行返回
+    var h1 =  $('.point1').height();
+    var h2 =  $('.point2').height();
+    var h3 =  $('.point3').height();
+    
+    
+    new ScrollMagic.Scene({
+        triggerElement: '#kp01',
+        //offset : 0,// 改綠指標(單位px)
+        //triggerHook: 0.3, // 改藍色指標  0~1
+        duration : h1 ,//單位是px or %  動畫執行的範圍
+        //reverse: true // 動畫執行返回
+    
+    }).setClassToggle('.val01' , 'OnRed').addIndicators().addTo(controller);
 
-}).setTween(parallaxs).addIndicators().on('enter', function () {
-    console.log('滾動視差');
-}).addTo(controller);
+    new ScrollMagic.Scene({
+        triggerElement: '#kp02',
+        //offset : 0,// 改綠指標(單位px)
+        //triggerHook: 0.3, // 改藍色指標  0~1
+        duration : h2 ,//單位是px or %  動畫執行的範圍
+        //reverse: true // 動畫執行返回
+    
+    }).setClassToggle('.val02' , 'OnRed').addIndicators().addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: '#kp03',
+        //offset : 0,// 改綠指標(單位px)
+        //triggerHook: 0.3, // 改藍色指標  0~1
+        duration : h3 ,//單位是px or %  動畫執行的範圍
+        //reverse: true // 動畫執行返回
+    
+    }).setClassToggle('.val03' , 'OnRed').addIndicators().addTo(controller);
+    
+    
+   
+
+
+
+//數字疊加
+
+  var demo = {score:0},
+    scoreDisplay = document.getElementById("scoreDisplay");
+	
+    //創建一個介於20秒內改變分數的屬性值從0到100。
+function enter(){
+     TweenMax.to(demo,5,{
+		score:100,
+		onUpdate:showScore
+    })
+}
+
+ //在tween update時通過這個功能輸出。
+ function showScore() {
+    scoreDisplay.innerHTML = demo.score.toFixed(1);
+} 
+
+
+
+
+    new ScrollMagic.Scene({
+        triggerElement: '#key05',
+        //offset : 0,// 改綠指標(單位px)
+        triggerHook: 0 // 改藍色指標  0~1
+        //duration : '300%' //單位是px or %  動畫執行的範圍
+       // reverse: true // 動畫執行返回
+    
+    }).addIndicators().on('enter', function () {
+        //執行functtion
+        enter();
+        console.log('enter');
+    }).addTo(controller);
+
+
+
+
+
+
+
+
+
+// new ScrollMagic.Scene({
+//     triggerElement: '#kp02',
+//     //offset : 0,// 改綠指標(單位px)
+//     //triggerHook: 0.3, // 改藍色指標  0~1
+//     //duration : '100' //單位是px or %  動畫執行的範圍
+//     //reverse: true // 動畫執行返回
+
+// }).setClassToggle('.nav .val02' ,'on02').addIndicators().on('enter', function () {
+//     console.log('hover02');
+// }).addTo(controller);
 
 
 

@@ -3,20 +3,29 @@
 @import 'page/index';
 @import 'page/aboutus';
 
+
+//function
 @mixin marginAuto() {
     margin-left: auto;
     margin-right: auto;
 }
 
+@mixin rect($w) {
+    width: $w * 2;
+    height: $w;
+
+}
+
 .box {
-    width: 300px;
+    @include rect(300px);
     @include marginAuto();
 }
 
 .box-1 {
-    width: 300px;
+    @include rect(200px);
     @include marginAuto()
 }
+
 
 
 

@@ -1,3 +1,5 @@
 .wrapper-index {
+  @include rect(600px);
+  @include marginAuto();
   font-size: $font-size;
 }

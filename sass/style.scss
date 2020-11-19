@@ -1,20 +1,15 @@
 @import 'base/var';
 @import 'modules/module';
+@import 'mixins/mixin';
 @import 'page/index';
 @import 'page/aboutus';
+// @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
+
+/*--bootstrap end --*/
 
 //function
-@mixin marginAuto() {
-    margin-left: auto;
-    margin-right: auto;
-}
 
-@mixin rect($w) {
-    width: $w * 2;
-    height: $w;
-
-}
 
 .box {
     @include rect(300px);
@@ -25,6 +20,13 @@
     @include rect(200px);
     @include marginAuto()
 }
+.box-4 {
+   @include opacity(70); 
+}
+
+
+
+
 
 
 

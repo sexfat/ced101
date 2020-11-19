@@ -32,7 +32,28 @@
     @include opacity(70); 
     @include rects(100px , 200px , #333);
  }
- 
+
+@mixin btn($w , $h , $bordercolor , $bgc , $borderRadius:null ){
+    padding-top:$h;
+    padding-bottom:$h;
+    padding-left: $w;
+    padding-right: $w;
+    text-align: center;
+    border: 1px solid $bordercolor;
+   outline: springgreen;
+  border-radius: $borderRadius;
+  background-color: $bgc ;
+} 
+
+
+
+.btn {
+   @include btn(3px , 5px ,#333 , #f20 ,5px)
+}
+
+.btn-w {
+   @include btn(10px , 3px, #999 , rgb(255, 204, 0))
+}
 
 
 

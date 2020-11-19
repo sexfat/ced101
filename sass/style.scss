@@ -3,6 +3,8 @@
 @import 'mixins/mixin';
 @import 'page/index';
 @import 'page/aboutus';
+@import 'layout/header';
+@import 'layout/footer';
 // @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 
@@ -33,29 +35,50 @@
     @include rects(100px , 200px , #333);
  }
 
+$a1 : 300px;
+$a1 : 100px !default;
+
+.a1 {
+   width: $a1; 
+}
+
 @mixin btn($w , $h , $bordercolor , $bgc , $borderRadius:null ){
-    padding-top:$h;
-    padding-bottom:$h;
-    padding-left: $w;
-    padding-right: $w;
+    padding:$h $w;
     text-align: center;
     border: 1px solid $bordercolor;
    outline: springgreen;
-  border-radius: $borderRadius;
-  background-color: $bgc ;
+   border-radius: $borderRadius;
+   background-color: $bgc;
 } 
 
 
 
 .btn {
-   @include btn(3px , 5px ,#333 , #f20 ,5px)
+   @include btn(3px , 5px ,#333 , #f20 ,5px);
+   &:hover {
+      background-color: #fff;   
+   } //偽元素
+
 }
+
+
 
 .btn-w {
    @include btn(10px , 3px, #999 , rgb(255, 204, 0))
 }
 
 
+@mixin rectall($w:300px  , $h:300px) {
+   width: $w;
+   height:  $h;
+}
+
+
+
+
+.rect {
+   @include rectall(400px , 200px);
+}
 
 
 

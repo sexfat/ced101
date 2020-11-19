@@ -40,6 +40,14 @@
 }
 
 
+@mixin grid($col) {
+    @for $i from 1 through $col {
+        .col-md-#{$i} {
+          width: ($i /$col) * 100%;
+        }
+     }
+}
+
 
 
 

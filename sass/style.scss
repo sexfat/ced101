@@ -1,5 +1,26 @@
-@import 'var';
-@import  'module';
+@import 'base/var';
+@import 'modules/module';
+@import 'page/index';
+@import 'page/aboutus';
+
+@mixin marginAuto() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    width: 300px;
+    @include marginAuto();
+}
+
+.box-1 {
+    width: 300px;
+    @include marginAuto()
+}
+
+
+
+
 
 
 
@@ -9,10 +30,26 @@ body {
     color: $color;
     margin: $margin;
     background-color: map-get($bgcolor, 'blue');
+
     * {
-       box-sizing: border-box; 
+        box-sizing: border-box;
     }
 
+    .container {
+        width: 100vw;
+        height: 100vh; //高度
 
+        h1 {
+            font-size: $font-size;
+            /*----*/
+        }
+
+        .content {
+            width: 80%;
+
+            .sidebar {
+                width: 30%;
+            }
+        }
+    }
 }
-

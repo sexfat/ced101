@@ -1,0 +1,30 @@
+body {
+  padding: 90px;
+  font-size: 14px;
+  color: #000;
+  margin: 10px 20px 30px 20px;
+  background-color: #0025f5;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+body .wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+body .wrapper h1 {
+  font-size: 14px;
+  /*----*/
+}
+
+body .wrapper .content {
+  width: 80%;
+}
+
+body .wrapper .content .sidebar {
+  width: 30%;
+}
+/*# sourceMappingURL=style.css.map */

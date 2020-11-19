@@ -27,36 +27,38 @@
 
 
 .box-4 {
-    @include opacity(70); 
-    @include rects(100px , 200px , #333);
- }
+    @include opacity(70);
+    @include rects(100px, 200px, #333);
+}
 
 $a1 : 300px;
 $a1 : 100px !default;
 
 .a1 {
-   width: $a1; 
+    width: $a1;
 }
 
 
 
 
 .btn {
-   @include btn(3px , 5px ,#333 , #f20 ,5px); 
+    @include btn(3px, 5px, #333, #f20, 5px);
 }
+
 .btn-w {
-   @include btn(10px , 3px, #999 , rgb(255, 204, 0))
+    @include btn(10px, 3px, #999, rgb(255, 204, 0))
 }
 
 //預設值
-@mixin rectall($w:300px  , $h:300px) {
-   width: $w;
-   height:  $h;
+@mixin rectall($w:300px, $h:300px) {
+    width: $w;
+    height: $h;
 }
 
 .rect {
-   @include rectall(400px , 200px);
+    @include rectall(400px, 200px);
 }
+
 body {
     padding: 90px;
     font-size: $font-size;
@@ -90,27 +92,94 @@ body {
 
 // 繼承
 .red {
-    color : red;
+    color: red;
     background-color: red;
- }
- 
- .blue {
-     color : blue;
-     background-color: blue;
- }
- 
- .boxblue {
-     width: 100px;
-     height: 300px;
+}
+
+.blue {
+    color: blue;
+    background-color: blue;
+}
+
+.boxblue {
+    width: 100px;
+    height: 300px;
     @extend .blue;
- }
+}
 
 .boxRed {
-    width:300px ;
-    height:400px ;
-    @extend .red ;
-} 
+    width: 300px;
+    height: 400px;
+    @extend .red;
+}
 
 
+.bb {
+    width: 100px + 100;
+    height: 100px - 20px;
+    margin: 10px * 10;
+    font: (100 / 20) + px; //除法要括號
+}
+
+.cc {
+    width: ceil(78.95px); //無條件進位
+    height: round(67.45px); // 四捨五入
+    padding: floor(56.34px); //無條件捨去
+}
+
+@mixin fontSize($font-base-size) {
+    h1 {
+        font-size: ceil($font-base-size * 4.2);
+    }
+
+    h2 {
+        font-size: ceil($font-base-size * 3.8);
+    }
+
+    h3 {
+        font-size: ceil($font-base-size * 2.5);
+    }
+
+    h4 {
+        font-size: ceil($font-base-size * 1.5);
+    }
+
+    h5 {
+        font-size: ceil($font-base-size * 1.2);
+    }
+}
+
+@include fontSize(15px);
+
+@for $i from 1 through 10 {
+ //數值轉字串 
+  .dot-#{$i} {
+      width: $i * 1px;
+  }
+}
+
+@mixin grid($col) {
+    @for $i from 1 through $col {
+        .col-md-#{$i} {
+          width: ($i /$col) * 100%;
+        }
+     }
+}
+
+
+@include grid(24);
+
+
+
+
+
+
+// .col-md-1 {
+//  width: 8.3333% ;
+// }
+
+// .col-md-2 {
+//     width: 16.666% ;
+//    }
 
 

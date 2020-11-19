@@ -16,15 +16,8 @@
   width: 30%;
 }
 
-body {
-  padding: 90px;
-  font-size: 14px;
+.box {
+  width: 100px;
   color: #000;
-  margin: 10px 20px 30px 20px;
-  background-color: #0025f5;
 }
-
-body * {
-  box-sizing: border-box;
-}
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

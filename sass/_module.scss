@@ -1,0 +1,13 @@
+.container {
+        width: 100vw;
+        height: 100vh; //高度
+        h1 {
+            font-size: $font-size;/*----*/
+        }
+        .content {
+            width: 80%;
+            .sidebar  {
+                width: 30%;
+            }
+        }
+    }

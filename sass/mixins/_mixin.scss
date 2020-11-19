@@ -1,39 +1,48 @@
 @mixin opacity($opacity) {
-    $opacity-ie: ($opacity * 100);  // IE8 filter
+    $opacity-ie: ($opacity * 100); // IE8 filter
     filter: alpha(opacity=$opacity-ie);
     opacity: $opacity;
-  }
+}
 
 //沒有帶值
 @mixin marginAuto() {
     margin-left: auto;
     margin-right: auto;
 }
+
 //有帶一個值
 @mixin rect($w) {
     width: $w * 2;
     height: $w;
 }
+
 //帶多值
-@mixin rects($w , $h , $bgc){
+@mixin rects($w, $h, $bgc) {
     width: $w;
     height: $h;
     background-color: $bgc;
 }
 
 //空值
-@mixin btn($w , $h , $bordercolor , $bgc , $borderRadius:null ){
-    padding:$h $w;
+@mixin btn($w, $h, $bordercolor, $bgc, $borderRadius:null) {
+    padding: $h $w;
     text-align: center;
     border: 1px solid $bordercolor;
-   outline: springgreen;
-   border-radius: $borderRadius;
-   background-color: $bgc;
-   //偽元素
-   &:hover {
-    //    background-color: darken($bgc, 10);//顏色函式ㄋ
-       background-color: lighten($bgc, 20);//顏色函式ㄋ
-   }
-} 
+    outline: springgreen;
+    border-radius: $borderRadius;
+    background-color: $bgc;
+
+    //偽元素
+    &:hover {
+        //    background-color: darken($bgc, 10);//顏色函式ㄋ
+        background-color: lighten($bgc, 20); //顏色函式ㄋ
+    }
+}
+
+
+
+
+
+
 
 

@@ -105,4 +105,24 @@ body .container .content {
 body .container .content .sidebar {
   width: 30%;
 }
+
+.red, .boxRed {
+  color: red;
+  background-color: red;
+}
+
+.blue, .boxblue {
+  color: blue;
+  background-color: blue;
+}
+
+.boxblue {
+  width: 100px;
+  height: 300px;
+}
+
+.boxRed {
+  width: 300px;
+  height: 400px;
+}
 /*# sourceMappingURL=style.css.map */

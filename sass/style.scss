@@ -54,25 +54,9 @@ $a1 : 100px !default;
    height:  $h;
 }
 
-
-
-
 .rect {
    @include rectall(400px , 200px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 body {
     padding: 90px;
     font-size: $font-size;
@@ -102,3 +86,31 @@ body {
         }
     }
 }
+
+
+// 繼承
+.red {
+    color : red;
+    background-color: red;
+ }
+ 
+ .blue {
+     color : blue;
+     background-color: blue;
+ }
+ 
+ .boxblue {
+     width: 100px;
+     height: 300px;
+    @extend .blue;
+ }
+
+.boxRed {
+    width:300px ;
+    height:400px ;
+    @extend .red ;
+} 
+
+
+
+

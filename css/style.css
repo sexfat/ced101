@@ -56,15 +56,7 @@ header .logo {
 }
 
 .btn:hover {
-  background-color: #fff;
-}
-
-.btn > span {
-  width: 100px;
-}
-
-.btn > span::before {
-  content: '';
+  background-color: #ff7a66;
 }
 
 .btn-w {
@@ -73,6 +65,10 @@ header .logo {
   border: 1px solid #999;
   outline: springgreen;
   background-color: #ffcc00;
+}
+
+.btn-w:hover {
+  background-color: #ffe066;
 }
 
 .rect {

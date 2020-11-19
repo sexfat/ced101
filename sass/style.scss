@@ -23,11 +23,7 @@
     @include marginAuto()
 }
 
-@mixin rects($w , $h , $bgc){
-    width: $w;
-    height: $h;
-    background-color: $bgc;
-}
+
 
 
 .box-4 {
@@ -41,29 +37,12 @@ $a1 : 100px !default;
 .a1 {
    width: $a1; 
 }
-//空值
-@mixin btn($w , $h , $bordercolor , $bgc , $borderRadius:null ){
-    padding:$h $w;
-    text-align: center;
-    border: 1px solid $bordercolor;
-   outline: springgreen;
-   border-radius: $borderRadius;
-   background-color: $bgc;
-} 
+
 
 
 
 .btn {
-   @include btn(3px , 5px ,#333 , #f20 ,5px);
-   &:hover {
-      background-color: #fff;   
-   }
-   > span {
-     width: 100px; 
-     &::before {
-        content: '';
-     }
-   } //偽元素
+   @include btn(3px , 5px ,#333 , #f20 ,5px); 
 }
 .btn-w {
    @include btn(10px , 3px, #999 , rgb(255, 204, 0))

@@ -41,7 +41,7 @@ $a1 : 100px !default;
 .a1 {
    width: $a1; 
 }
-
+//空值
 @mixin btn($w , $h , $bordercolor , $bgc , $borderRadius:null ){
     padding:$h $w;
     text-align: center;
@@ -57,16 +57,19 @@ $a1 : 100px !default;
    @include btn(3px , 5px ,#333 , #f20 ,5px);
    &:hover {
       background-color: #fff;   
+   }
+   > span {
+     width: 100px; 
+     &::before {
+        content: '';
+     }
    } //偽元素
 }
-
-
-
 .btn-w {
    @include btn(10px , 3px, #999 , rgb(255, 204, 0))
 }
 
-
+//預設值
 @mixin rectall($w:300px  , $h:300px) {
    width: $w;
    height:  $h;

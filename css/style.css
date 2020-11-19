@@ -59,6 +59,14 @@ header .logo {
   background-color: #fff;
 }
 
+.btn > span {
+  width: 100px;
+}
+
+.btn > span::before {
+  content: '';
+}
+
 .btn-w {
   padding: 3px 10px;
   text-align: center;

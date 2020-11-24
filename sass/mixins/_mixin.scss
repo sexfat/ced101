@@ -139,6 +139,16 @@
     }
 }
 
+// 給按鈕使用
+@mixin btnbgc($btnColor) {
+    @each $bgc,$color in $btnColor {
+        .btn-#{$bgc} {
+            background-color: $color;
+            @extend .btnbox
+        }
+    }
+}
+
 
 
 

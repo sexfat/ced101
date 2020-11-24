@@ -417,16 +417,12 @@ h5 {
   -ms-transition: 0.1s;
 }
 
-.btnbox, .btn-blue, .btn-yellow, .btn-green, .btn-black {
+.btnbox, .btn-yellow, .btn-green, .btn-black {
   width: 100px;
   padding: 20px;
   text-align: center;
   color: #fff;
   font-size: 18px;
-}
-
-.btn-blue {
-  background-color: #003bfb;
 }
 
 .btn-yellow {

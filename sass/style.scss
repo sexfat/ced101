@@ -248,8 +248,9 @@ $value in $titlefont {
 
 
 // @mixin btn-color($btnColor) {
-    
-// }
+        // }
+
+
 .btnbox {
   width: 100px;
   padding: 20px;
@@ -258,21 +259,10 @@ $value in $titlefont {
   font-size: $font-size;
 }
 
-
-$btnColor : (
-    'blue' : rgb(0, 59, 251),
-    'yellow' : rgb(255, 238, 0),
-    'green' : rgb(51, 255, 0),
-    'black' : rgb(0, 0, 0),
-);
+@include btnbgc($btnColor)
 
 
-@each $bgc,$color in $btnColor {
-    .btn-#{$bgc} {
-        background-color: $color;
-        @extend .btnbox
-    }
-}
+
 
 
 

@@ -294,4 +294,21 @@ h5 {
 .col-md-24 {
   width: 100%;
 }
+
+body {
+  padding: 10px;
+}
+
+body .box {
+  margin: 10px;
+}
+
+.wrapper {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
 /*# sourceMappingURL=style.css.map */

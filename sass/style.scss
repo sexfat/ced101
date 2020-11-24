@@ -152,21 +152,70 @@ body {
 @include fontSize(15px);
 
 @for $i from 1 through 10 {
- //數值轉字串 
-  .dot-#{$i} {
-      width: $i * 1px;
-  }
+
+    //數值轉字串 
+    .dot-#{$i} {
+        width: $i * 1px;
+    }
 }
 
 @mixin grid($col) {
     @for $i from 1 through $col {
         .col-md-#{$i} {
-          width: ($i /$col) * 100%;
+            width: ($i /$col) * 100%;
         }
-     }
+    }
 }
 
 @include grid(24);
+
+
+
+$a: 10px;
+
+body {
+    @if $a {
+        .box {
+            margin: $a;
+        }
+    }
+
+    padding: 10px;
+}
+
+
+@mixin text($wegiht) {
+    font-size: 16px;
+    color: #000;
+    @if $wegiht==bold {
+        font-weight: bold;
+    }
+
+    @else if $wegiht==medium {
+        font-weight: 400;
+    }
+    @else if $wegiht==lighter {
+        font-weight: 100;
+    }
+}
+
+
+.wrapper {
+   width: 1200px; 
+  @include marginAuto();
+  @include text(medium);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -180,5 +229,3 @@ body {
 // .col-md-2 {
 //     width: 16.666% ;
 //    }
-
-

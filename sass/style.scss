@@ -187,6 +187,7 @@ body {
 @mixin text($wegiht) {
     font-size: 16px;
     color: #000;
+
     @if $wegiht==bold {
         font-weight: bold;
     }
@@ -194,6 +195,7 @@ body {
     @else if $wegiht==medium {
         font-weight: 400;
     }
+
     @else if $wegiht==lighter {
         font-weight: 100;
     }
@@ -201,10 +203,88 @@ body {
 
 
 .wrapper {
-   width: 1200px; 
-  @include marginAuto();
-  @include text(medium);
+    width: 1200px;
+    @include marginAuto();
+    @include text(medium);
 }
+
+
+@mixin boxs() {
+    color: #fff;
+    @content;
+}
+
+.blues {
+    @include boxs() {
+        span {
+            font-size: 100px;
+            width: 100px;
+        }
+    }
+}
+
+
+$desktop : 1400px;
+$medium : 1024px;
+$small : 721px; 
+
+
+
+@mixin rwd($b) {
+  @if $b == desktop { 
+     @media all and (min-width : $desktop ) {
+        @content;
+     }
+  }
+  @else if $b == medium  {
+    @media all and (min-width :$medium) {
+        @content;
+    }
+  }
+  @else if $b == small {
+    @media all and (min-width : $small) {
+        @content;
+    }
+  }
+}
+
+//桌機
+
+@include rwd(desktop){
+body {
+   font-size: 30px;
+} 
+}
+
+
+//平板
+@include rwd(medium){
+    body {
+       font-size: 40px;
+    } 
+}
+
+
+
+@include rwd(small){
+    body {
+       font-size: 30px;
+    } 
+
+}
+
+
+@include rwd(small){
+//手機版
+
+
+}
+
+
+
+
+
+
 
 
 

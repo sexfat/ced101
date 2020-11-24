@@ -311,4 +311,31 @@ body .box {
   color: #000;
   font-weight: 400;
 }
+
+.blues {
+  color: #fff;
+}
+
+.blues span {
+  font-size: 100px;
+  width: 100px;
+}
+
+@media all and (min-width: 1400px) {
+  body {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 721px) {
+  body {
+    font-size: 30px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

@@ -385,4 +385,28 @@ body .box {
   background-size: cover;
   width: 100%;
 }
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+.g1 {
+  font-size: 16px;
+}
 /*# sourceMappingURL=style.css.map */

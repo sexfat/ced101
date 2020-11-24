@@ -190,10 +190,6 @@ body {
 }
 
 // list
-// $imgbg : a1 a2 a3 boxer ig avator; //list
-
-
-
 @include img_bg(a1 a2){
    width:100%;
    height: 300px; 
@@ -204,10 +200,32 @@ body {
     height: 600px; 
  };
 
-
  @include img_bg(c1 c2 c3 ,png){
     width:100%;
  };
+
+
+// h1 {font-size: 60px;}
+// h2 {font-size: 50px;}
+// h3 {font-size: 40px;}
+// h4 {font-size: 30px;}
+// h5 {font-size: 20px;}
+
+$titlefont:(
+  'h1' : 60px,
+  'h2' : 50px,
+  'h3' : 40px, 
+  'h4' : 30px,
+  'h5' : 20px,
+  '.g1' : 16px
+);
+
+
+@each $title , $value  in  $titlefont {
+   #{$title} {
+     font-size: $value;
+   }
+}
 
 
 

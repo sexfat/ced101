@@ -4,8 +4,10 @@ $null : null;
 $as : true;
 $font_family: 'Arial';
 $margin : 10px 20px 30px 20px; // list
-$bgcolor : ('blue' : rgb(0, 37, 245),
-    'yellow' :rgb(250, 250, 0)); //map
+$bgcolor : (
+    'blue' : rgb(0, 37, 245),
+    'yellow' :rgb(250, 250, 0)
+    ); //map
 
 
 

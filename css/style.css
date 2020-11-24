@@ -3,11 +3,11 @@
   height: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .aboutus {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 header {
@@ -97,7 +97,7 @@ header .logo {
 
 body {
   padding: 90px;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
   margin: 10px 20px 30px 20px;
   background-color: #0025f5;
@@ -113,7 +113,7 @@ body .container {
 }
 
 body .container h1 {
-  font-size: 16px;
+  font-size: 18px;
   /*----*/
 }
 
@@ -415,5 +415,25 @@ h5 {
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
   -ms-transition: 0.1s;
+}
+
+.btnbox, .btn-blue, .btn-yellow, .btn-green {
+  width: 100px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.btn-blue {
+  background-color: #003bfb;
+}
+
+.btn-yellow {
+  background-color: #ffee00;
+}
+
+.btn-green {
+  background-color: #33ff00;
 }
 /*# sourceMappingURL=style.css.map */

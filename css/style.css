@@ -19,6 +19,25 @@ header .logo {
   height: 100px;
 }
 
+@media all and (min-width: 1300px) {
+  body {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 721px) {
+  body {
+    font-size: 30px;
+    color: #fff;
+  }
+}
+
 /*--bootstrap end --*/
 .box {
   width: 600px;
@@ -319,23 +338,5 @@ body .box {
 .blues span {
   font-size: 100px;
   width: 100px;
-}
-
-@media all and (min-width: 1300px) {
-  body {
-    font-size: 30px;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  body {
-    font-size: 40px;
-  }
-}
-
-@media all and (min-width: 721px) {
-  body {
-    font-size: 30px;
-  }
 }
 /*# sourceMappingURL=style.css.map */

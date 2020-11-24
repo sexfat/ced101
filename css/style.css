@@ -369,19 +369,19 @@ body .box {
 }
 
 .c1-photo {
-  background-image: url("./images/c1.jpg");
+  background-image: url("./images/c1.png");
   background-size: cover;
   width: 100%;
 }
 
 .c2-photo {
-  background-image: url("./images/c2.jpg");
+  background-image: url("./images/c2.png");
   background-size: cover;
   width: 100%;
 }
 
 .c3-photo {
-  background-image: url("./images/c3.jpg");
+  background-image: url("./images/c3.png");
   background-size: cover;
   width: 100%;
 }

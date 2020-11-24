@@ -192,10 +192,10 @@ body {
 // list
 // $imgbg : a1 a2 a3 boxer ig avator; //list
 
-@mixin img_bg($img-map) {
+@mixin img_bg($img-map , $files:jpg) {
     @each $img in $img-map {
         .#{$img}-photo {
-            background-image: url('./images/#{$img}.jpg');
+            background-image: url('./images/#{$img}.#{$files}');
             background-size: cover;
             @content;
         }
@@ -213,9 +213,8 @@ body {
  };
 
 
- @include img_bg(c1 c2 c3){
+ @include img_bg(c1 c2 c3 ,png){
     width:100%;
-   
  };
 
 

@@ -321,7 +321,7 @@ body .box {
   width: 100px;
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1300px) {
   body {
     font-size: 30px;
   }

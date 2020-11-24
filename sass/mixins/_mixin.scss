@@ -49,6 +49,25 @@
 }
 
 
+@mixin rwd($b) {
+    @if $b == desktop { 
+       @media all and (min-width : $desktop ) {
+          @content;
+       }
+    }
+    @else if $b == medium  {
+      @media all and (min-width :$medium) {
+          @content;
+      }
+    }
+    @else if $b == small {
+      @media all and (min-width : $small) {
+          @content;
+      }
+    }
+  }
+
+
 
 
 

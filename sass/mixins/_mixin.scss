@@ -48,7 +48,40 @@
      }
 }
 
+@mixin fontSize($font-base-size) {
+    h1 {
+        font-size: ceil($font-base-size * 4.2);
+    }
 
+    h2 {
+        font-size: ceil($font-base-size * 3.8);
+    }
+
+    h3 {
+        font-size: ceil($font-base-size * 2.5);
+    }
+
+    h4 {
+        font-size: ceil($font-base-size * 1.5);
+    }
+
+    h5 {
+        font-size: ceil($font-base-size * 1.2);
+    }
+}
+
+
+@mixin grid($col) {
+    @for $i from 1 through $col {
+        .col-md-#{$i} {
+            width: ($i /$col) * 100%;
+        }
+    }
+}
+
+
+//==
+//==
 @mixin rwd($b) {
     @if $b == desktop { 
        @media all and (min-width : $desktop ) {
@@ -66,6 +99,28 @@
       }
     }
   }
+
+
+//=====
+// @include text(字體粗細  bold/ medium/ lighter)
+//=====  
+
+  @mixin text($wegiht) {
+    font-size: 16px;
+    color: #000;
+
+    @if $wegiht==bold {
+        font-weight: bold;
+    }
+
+    @else if $wegiht==medium {
+        font-weight: 400;
+    }
+
+    @else if $wegiht==lighter {
+        font-weight: 100;
+    }
+}  
 
 
 

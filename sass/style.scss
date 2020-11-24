@@ -233,10 +233,7 @@ $value in $titlefont {
 
 @mixin css3($property, $value) {
 
-    @each $prefix in -webkit-,
-    -moz-,
-    -o-,
-    -ms- {
+    @each $prefix in '', -webkit- , -moz-{
         #{$prefix}#{$property}: $value
     }
 }

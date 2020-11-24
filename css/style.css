@@ -409,4 +409,11 @@ h5 {
 .g1 {
   font-size: 16px;
 }
+
+.boxer {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  -ms-transition: 0.1s;
+}
 /*# sourceMappingURL=style.css.map */

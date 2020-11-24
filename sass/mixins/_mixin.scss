@@ -122,6 +122,24 @@
     }
 }  
 
+//=====
+//@include img_bg(值){
+//   增加屬性 
+//   width:100%;
+//   height: 300px; 
+// };
+//=====
+@mixin img_bg($img-map , $files:jpg) {
+    @each $img in $img-map {
+        .#{$img}-photo {
+            background-image: url('./images/#{$img}.#{$files}');
+            background-size: cover;
+            @content;
+        }
+    }
+}
+
+
 
 
 

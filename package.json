@@ -19,6 +19,8 @@
   "homepage": "https://github.com/sexfat/ced101#readme",
   "dependencies": {
     "bootstrap-sass": "^3.4.1",
+    "bourbon-neat": "^4.0.0",
+    "compass": "^0.1.1",
     "gsap": "^3.5.1",
     "jquery": "^3.5.1",
     "vue": "^2.6.12"

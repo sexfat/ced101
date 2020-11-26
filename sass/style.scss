@@ -256,7 +256,45 @@ $value in $titlefont {
   font-size: $font-size;
 }
 
-@include btnbgc($btnColor)
+@include btnbgc($btnColor);
+
+
+%redColor {
+    color: red;
+}
+
+
+.boxes {
+   @extend %redColor
+}
+
+.bg-image {
+   width: 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+@mixin bgImages() {
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.f-image {
+  @extend .bg-image;
+//   @include bgImages();
+  background-image: url('images/img.jpg');
+}
+
+
+
+
+
+
+
 
 
 

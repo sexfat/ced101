@@ -69,42 +69,40 @@ const uglify = require('gulp-uglify');
 
 function ugjs() {
     return src('js/*.js')
-    .pipe(concat('all.js')) // 合併
-    .pipe(uglify())
-    .pipe(rename(function (path) {
-        // Updates the object in-place
-        path.basename += "-min"; // 檔名
-        path.extname = ".js"; // 副檔名
-    })) // 更改名稱
-    .pipe(dest('app/js'))
+        .pipe(concat('all.js')) // 合併
+        .pipe(uglify())
+        .pipe(rename(function (path) {
+            // Updates the object in-place
+            path.basename += "-min"; // 檔名
+            path.extname = ".js"; // 副檔名
+        })) // 更改名稱
+        .pipe(dest('app/js'))
 }
 
 
 exports.ugjs = ugjs;
-exports.allmission = parallel(concatall , ugjs) //  所有任務整合
+exports.allmission = parallel(concatall, ugjs) //  所有任務整合
 
 
 
 // sass
 const sass = require('gulp-sass');
-
+const sourcemaps = require('gulp-sourcemaps');
 function sassStyle() {
     return src('./sass/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS()) //壓縮
+        .pipe(sourcemaps.write())
         .pipe(dest('./app/css'));
 }
 
 exports.sass = sassStyle
 
 function watchfile() {
-   watch('sass/*.scss' , sassStyle);
-   watch('js/*.js' , ugjs);  
-   watch('css/*.css' , ugjs);  
+    watch('sass/*.scss', sassStyle);
+    watch('js/*.js', ugjs);
 }
 
 
 exports.watch = watchfile;
-
-
-

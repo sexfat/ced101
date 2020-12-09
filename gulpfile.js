@@ -98,7 +98,9 @@ function sassStyle() {
 exports.sass = sassStyle
 
 function watchfile() {
-   watch('sass/*.scss' , sassStyle) 
+   watch('sass/*.scss' , sassStyle);
+   watch('js/*.js' , ugjs);  
+   watch('css/*.css' , ugjs);  
 }
 
 

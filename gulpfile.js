@@ -88,20 +88,40 @@ exports.allmission = parallel(concatall, ugjs) //  所有任務整合
 // sass
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+
 function sassStyle() {
     return src('./sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS()) //壓縮
         .pipe(sourcemaps.write())
-        .pipe(dest('./app/css'));
+        .pipe(dest('./dist/css'));
 }
 
 exports.sass = sassStyle
 
+
+
+
+// html template
+
+const fileinclude = require('gulp-file-include')
+
+function includehtml() {
+    return src('*.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(dest('app/'))
+}
+
+
+exports.html = includehtml;
+
 function watchfile() {
     watch('sass/*.scss', sassStyle);
-    watch('js/*.js', ugjs);
+    watch(['*.html' ,'layout/*.html'] , includehtml)
 }
 
 

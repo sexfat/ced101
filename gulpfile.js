@@ -39,7 +39,7 @@ function concatCss() {
     return src('css/*.css').pipe(concat('all.css')).pipe(dest('app/css'));
 }
 
-// 所有任務
+// 所有任務 合併 ＋ 壓縮
 function concatall() {
     return src('css/*.css').pipe(concat('all.css')).pipe(cleanCSS()).pipe(dest('app/css'));
 }

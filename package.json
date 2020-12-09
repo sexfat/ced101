@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "所有任務整合": "gulp allmission",
-    "安裝套件": "npm install",
-    "push"  : "git push"
+    "安裝套件": "npm install"
   },
   "repository": {
     "type": "git",
@@ -26,6 +25,10 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^5.0.0"
   }
 }

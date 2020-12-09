@@ -34,25 +34,29 @@ exports.all2 = parallel(jstask, csstask); //並行
 // 合併檔案
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
+const rename = require("gulp-rename");
 
 function concatCss() {
     return src('css/*.css')
-    .pipe(concat('all.css'))
-    .pipe(dest('app/css'));
+        .pipe(concat('all.css'))
+        .pipe(dest('app/css'));
 }
 
-// 所有任務 合併 ＋ 壓縮
+// 所有任務 合併 ＋ 壓縮  + 更改檔案名稱
 function concatall() {
     return src('css/*.css')
-    .pipe(concat('all.css'))
-    .pipe(cleanCSS())
-    .pipe(dest('app/css'));
+        .pipe(concat('all.css')) // 合併
+        .pipe(cleanCSS()) //壓縮
+        .pipe(rename(function (path) {
+            // Updates the object in-place
+            path.basename += "-min"; // 檔名
+            path.extname = ".css"; // 副檔名
+        })) // 更改名稱
+        .pipe(dest('app/css'));
 }
 
-
-
 exports.concat = concatCss; //任務輸出
-exports.allmission = concatall //  所有任務整合
+
 
 //壓縮css
 function minify() {
@@ -60,3 +64,27 @@ function minify() {
 }
 //先合併css 在壓縮css
 exports.allcss = series(concatCss, minify);
+
+const uglify = require('gulp-uglify');
+
+function ugjs() {
+    return src('js/*.js')
+    .pipe(concat('all.js')) // 合併
+    .pipe(uglify())
+    .pipe(rename(function (path) {
+        // Updates the object in-place
+        path.basename += "-min"; // 檔名
+        path.extname = ".js"; // 副檔名
+    })) // 更改名稱
+    .pipe(dest('app/js'))
+}
+
+
+exports.ugjs = ugjs;
+exports.allmission = parallel(concatall , ugjs) //  所有任務整合
+
+
+
+// sass
+
+

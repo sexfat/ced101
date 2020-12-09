@@ -11,11 +11,11 @@ function csstask(cb){
   }
 
 function move(){
-    //src  來源       
+    //src  來源
    return src('index.html').pipe(dest('app/')) // dest 目的地
 }  
 
-exports.copyHtml = move
+exports.copyHtml = move //任務輸出
 
 exports.js = jstask
 exports.css = csstask

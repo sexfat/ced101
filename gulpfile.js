@@ -86,5 +86,23 @@ exports.allmission = parallel(concatall , ugjs) //  所有任務整合
 
 
 // sass
+const sass = require('gulp-sass');
+
+function sassStyle() {
+    return src('./sass/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS()) //壓縮
+        .pipe(dest('./app/css'));
+}
+
+exports.sass = sassStyle
+
+function watchfile() {
+   watch('sass/*.scss' , sassStyle) 
+}
+
+
+exports.watch = watchfile;
+
 
 

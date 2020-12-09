@@ -36,20 +36,25 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 
 function concatCss() {
-    return src('css/*.css').pipe(concat('all.css')).pipe(dest('app/css'));
+    return src('css/*.css')
+    .pipe(concat('all.css'))
+    .pipe(dest('app/css'));
 }
 
 // 所有任務 合併 ＋ 壓縮
 function concatall() {
-    return src('css/*.css').pipe(concat('all.css')).pipe(cleanCSS()).pipe(dest('app/css'));
+    return src('css/*.css')
+    .pipe(concat('all.css'))
+    .pipe(cleanCSS())
+    .pipe(dest('app/css'));
 }
-exports.concat = concatCss; //任務輸出
 
-exports.allmission = concatall
+
+
+exports.concat = concatCss; //任務輸出
+exports.allmission = concatall //  所有任務整合
 
 //壓縮css
-
-
 function minify() {
     return src('app/css/*.css').pipe(cleanCSS()).pipe(dest('app/css/mini'));
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "開發": "gulp",
-    "安裝套件": "npm install"
+    "安裝套件": "npm install",
+    "壓圖片" : "gulp imgmin"
   },
   "repository": {
     "type": "git",

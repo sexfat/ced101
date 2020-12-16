@@ -170,13 +170,20 @@ function img() {
 }
 
 
+
+function clearImg() {
+    //src  檔案路徑 
+    return src('dist/images/', {
+            read: false, //避免 gulp 去讀取檔案內容，讓刪除效能變好
+            force: true, //強制刪除
+            allowEmpty: true
+        })
+        .pipe(clean());
+}
+
+
 //清除舊圖片檔案 -> 在壓縮img
-exports.imgmin = img
-
-
-
-
-
+exports.imgmin = series(clearImg , img);
 
 //整合
 var browserSync = require('browser-sync').create();

@@ -152,11 +152,22 @@ function watchfile() {
     watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml))
 }
 
-
-
-
-
 exports.watch = watchfile;
+
+
+var browserSync = require('browser-sync').create();
+
+function  sync(){
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        },
+        port: 3600
+
+    });
+}
+
+exports.bsync = sync
 
 
 

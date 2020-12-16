@@ -159,7 +159,7 @@ exports.watch = watchfile;
 var browserSync = require('browser-sync').create();
 var reload  = browserSync.reload;
 
-function  sync(){
+function sync(){
     browserSync.init({
         server: {
             baseDir: "./dist",
@@ -170,6 +170,7 @@ function  sync(){
     watch('sass/*.scss', series(clearCss, sassStyle)).on('change' , reload);
     watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change' ,reload );
 }
+
 
 exports.bsync = sync
 

@@ -1,7 +1,1 @@
-"use strict";
-
-var callsomeone = function callsomeone(someone) {
-  return someone + '你好';
-};
-
-document.getElementById('person').innerHTML = callsomeone('aa');
+"use strict";var callsomeone=function(e){return e+"你好"};document.getElementById("person").innerHTML=callsomeone("aa");

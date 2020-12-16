@@ -60,11 +60,13 @@ exports.concat = concatCss; //任務輸出
 
 //壓縮css
 function minify() {
-    return src('app/css/*.css').pipe(cleanCSS()).pipe(dest('app/css/mini'));
+    return src('app/css/*.css')
+    .pipe(cleanCSS())
+    .pipe(dest('app/css/mini'));
 }
+
 //先合併css 在壓縮css
 exports.allcss = series(concatCss, minify);
-
 const uglify = require('gulp-uglify');
 
 function ugjs() {
@@ -196,6 +198,7 @@ function babels() {
     .pipe(babel({
         presets: ['@babel/env']
     }))
+    .pipe(uglify())
     .pipe(rename(function (path) {
         path.basename += "-es5"; // 檔名
     })) // 更改名稱

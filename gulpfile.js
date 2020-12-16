@@ -113,28 +113,19 @@ function includehtml() {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(dest('app/'))
+        .pipe(dest('dist/'))
 }
 
 
 exports.html = includehtml;
 
 
-
-function watchfile() {
-    watch('sass/*.scss', sassStyle);
-    watch(['*.html', 'layout/*.html'], includehtml)
-}
-
-
-exports.watch = watchfile;
-
 //刪除檔案
 var clean = require('gulp-clean');
 
 function clear() {
     //src  檔案路徑 
-    return src('dist/css', {
+    return src('dist', {
             read: false, //避免 gulp 去讀取檔案內容，讓刪除效能變好
             force: true, //強制刪除
             allowEmpty: true
@@ -142,11 +133,28 @@ function clear() {
         .pipe(clean());
 }
 
+
+//先清除dist/css -->  再打包scss
+
+
+
+function watchfile() {
+    watch('sass/*.scss', series(clear, sassStyle));
+    watch(['*.html', 'layout/*.html'], series(clear, includehtml))
+}
+
+
+
+
+
+exports.watch = watchfile;
+
+
+
 exports.del = clear
 
 
-//先清除dist/css -->  再打包scss
-exports.cssall = series(clear, sassStyle); //串連
+
 
 
 

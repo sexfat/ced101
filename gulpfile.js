@@ -191,22 +191,10 @@ exports.imgmin = series(clearImg, img);
 
 
 //babel es6 -> es5
-const babel = require('gulp-babel');
 
-function babels() {
-    return src('js/*.js')
-    .pipe(babel({
-        presets: ['@babel/env']
-    }))
-    .pipe(uglify())
-    .pipe(rename(function (path) {
-        path.basename += "-es5"; // 檔名
-    })) // 更改名稱
-    .pipe(dest('dist/js'))
-}
+const jsbabels = require('./task/babels.js');
 
-
-exports.jsbabel = babels
+exports.jsbabel = jsbabels;
 
 
 

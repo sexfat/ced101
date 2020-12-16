@@ -155,16 +155,20 @@ function watchfile() {
 exports.watch = watchfile;
 
 
+
 var browserSync = require('browser-sync').create();
+var reload  = browserSync.reload;
 
 function  sync(){
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./dist",
+            index : 'index.html'
         },
         port: 3600
-
     });
+    watch('sass/*.scss', series(clearCss, sassStyle)).on('change' , reload);
+    watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change' ,reload );
 }
 
 exports.bsync = sync

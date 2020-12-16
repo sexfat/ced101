@@ -159,11 +159,18 @@ exports.watch = watchfile;
 const imagemin = require('gulp-imagemin');
 
 function img() {
-    return src('./images/')
+    return src(['./images/*.*', 'images/**/*.*'])
     .pipe(imagemin())
+    .pipe(rename(function (path) {
+        // Updates the object in-place
+        path.basename += "-min"; // 檔名
+        // path.extname = ".png"; // 副檔名
+    })) // 更改名稱
     .pipe(dest('dist/images'))
 }
 
+
+//清除舊圖片檔案 -> 在壓縮img
 exports.imgmin = img
 
 

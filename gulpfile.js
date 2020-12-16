@@ -85,7 +85,7 @@ exports.allmission = parallel(concatall, ugjs) //  所有任務整合
 
 
 
-// sass
+// sass 編譯
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');

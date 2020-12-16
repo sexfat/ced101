@@ -88,11 +88,13 @@ exports.allmission = parallel(concatall, ugjs) //  所有任務整合
 // sass
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 
 function sassStyle() {
     return src('./sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(cleanCSS()) //壓縮
         .pipe(sourcemaps.write())
         .pipe(dest('./dist/css'));
@@ -208,6 +210,12 @@ exports.jsbabel = babels
 
 
 
+
+
+
+
+
+
 //整合
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -223,11 +231,7 @@ function sync() {
     watch('sass/*.scss', series(clearCss, sassStyle)).on('change', reload);
     watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change', reload);
     watch('js/*.js', series(babels)).on('change', reload);
-    
 
 }
-
-
-
 
 exports.default = sync

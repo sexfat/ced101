@@ -12,7 +12,9 @@ body {
    .wrapper {
        width: 1200px;
    }
-
+.box {
+  animation: 0ms;
+}
 }
 
 @media screen and (max-width: 484px) {

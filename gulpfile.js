@@ -172,7 +172,7 @@ function sync(){
 }
 
 
-exports.bsync = sync
+exports.default = sync
 
 
 

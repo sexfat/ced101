@@ -190,7 +190,7 @@ exports.imgmin = series(clearImg, img);
 const babel = require('gulp-babel');
 
 function babels() {
-    return src('js/es6.js')
+    return src('js/*.js')
     .pipe(babel({
         presets: ['@babel/env']
     }))

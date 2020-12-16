@@ -3,4 +3,4 @@ const callsomeone =  (someone) => {
 }
 
 
-document.getElementById('person').innerHTML = callsomeone('溫宗益')
+document.getElementById('person').innerHTML = callsomeone('aa')

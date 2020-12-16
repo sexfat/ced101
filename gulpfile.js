@@ -123,7 +123,7 @@ exports.html = includehtml;
 
 function watchfile() {
     watch('sass/*.scss', sassStyle);
-    watch(['*.html' ,'layout/*.html'] , includehtml)
+    watch(['*.html', 'layout/*.html'], includehtml)
 }
 
 
@@ -133,9 +133,11 @@ exports.watch = watchfile;
 var clean = require('gulp-clean');
 
 function clear() {
-    return src('css', {read: false})
+    return src('css', {
+            read: false, 
+            force: true //強制刪除
+        })
         .pipe(clean());
 }
 
-exports.del = clear 
-
+exports.del = clear

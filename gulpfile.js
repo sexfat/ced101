@@ -154,29 +154,36 @@ function watchfile() {
 
 exports.watch = watchfile;
 
+//圖片壓縮
+
+const imagemin = require('gulp-imagemin');
+
+function img() {
+    return src('./images/').pipe(imagemin()).pipe(dest('dist/images'))
+}
+
+exports.imgmin = img
 
 
+
+
+
+
+//整合
 var browserSync = require('browser-sync').create();
-var reload  = browserSync.reload;
+var reload = browserSync.reload;
 
-function sync(){
+function sync() {
     browserSync.init({
         server: {
             baseDir: "./dist",
-            index : 'index.html'
+            index: 'index.html'
         },
         port: 3600
     });
-    watch('sass/*.scss', series(clearCss, sassStyle)).on('change' , reload);
-    watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change' ,reload );
+    watch('sass/*.scss', series(clearCss, sassStyle)).on('change', reload);
+    watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change', reload);
 }
 
 
 exports.default = sync
-
-
-
-
-
-
-

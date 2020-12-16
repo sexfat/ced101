@@ -222,6 +222,9 @@ function sync() {
     });
     watch('sass/*.scss', series(clearCss, sassStyle)).on('change', reload);
     watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change', reload);
+    watch('js/*.js', series(babels)).on('change', reload);
+    
+
 }
 
 

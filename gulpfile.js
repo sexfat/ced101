@@ -129,15 +129,19 @@ function watchfile() {
 
 exports.watch = watchfile;
 
-//刪除
+//刪除檔案
 var clean = require('gulp-clean');
 
 function clear() {
     return src('css', {
-            read: false, 
+            read: false, //避免 gulp 去讀取檔案內容，讓刪除料能變好
             force: true //強制刪除
         })
         .pipe(clean());
 }
 
 exports.del = clear
+
+
+
+

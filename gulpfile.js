@@ -123,9 +123,9 @@ exports.html = includehtml;
 //刪除檔案
 var clean = require('gulp-clean');
 
-function clear() {
+function clearCss() {
     //src  檔案路徑 
-    return src('dist', {
+    return src('dist/css', {
             read: false, //避免 gulp 去讀取檔案內容，讓刪除效能變好
             force: true, //強制刪除
             allowEmpty: true
@@ -134,13 +134,26 @@ function clear() {
 }
 
 
+function clearHtml() {
+    //src  檔案路徑 
+    return src('dist/*.html', {
+            read: false, //避免 gulp 去讀取檔案內容，讓刪除效能變好
+            force: true, //強制刪除
+            allowEmpty: true
+        })
+        .pipe(clean());
+}
+
+
+
+
+
+
 //先清除dist/css -->  再打包scss
 
-
-
 function watchfile() {
-    watch('sass/*.scss', series(clear, sassStyle));
-    watch(['*.html', 'layout/*.html'], series(clear, includehtml))
+    watch('sass/*.scss', series(clearCss, sassStyle));
+    watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml))
 }
 
 
@@ -148,10 +161,6 @@ function watchfile() {
 
 
 exports.watch = watchfile;
-
-
-
-exports.del = clear
 
 
 

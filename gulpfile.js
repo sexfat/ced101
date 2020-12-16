@@ -160,13 +160,13 @@ const imagemin = require('gulp-imagemin');
 
 function img() {
     return src(['./images/*.*', 'images/**/*.*'])
-    .pipe(imagemin())
-    .pipe(rename(function (path) {
-        // Updates the object in-place
-        path.basename += "-min"; // 檔名
-        // path.extname = ".png"; // 副檔名
-    })) // 更改名稱
-    .pipe(dest('dist/images'))
+        .pipe(imagemin())
+        .pipe(rename(function (path) {
+            // Updates the object in-place
+            path.basename += "-min"; // 檔名
+            // path.extname = ".png"; // 副檔名
+        })) // 更改名稱
+        .pipe(dest('dist/images'))
 }
 
 
@@ -183,7 +183,27 @@ function clearImg() {
 
 
 //清除舊圖片檔案 -> 在壓縮img
-exports.imgmin = series(clearImg , img);
+exports.imgmin = series(clearImg, img);
+
+
+//babel es6 -> es5
+const babel = require('gulp-babel');
+
+function babels() {
+    return src('js/*.js')
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(dest('dist/js'))
+}
+
+
+exports.jsbabel = babels
+
+
+
+
+
 
 //整合
 var browserSync = require('browser-sync').create();
@@ -200,6 +220,8 @@ function sync() {
     watch('sass/*.scss', series(clearCss, sassStyle)).on('change', reload);
     watch(['*.html', 'layout/*.html'], series(clearHtml, includehtml)).on('change', reload);
 }
+
+
 
 
 exports.default = sync

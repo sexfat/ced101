@@ -145,10 +145,6 @@ function clearHtml() {
 }
 
 
-
-
-
-
 //先清除dist/css -->  再打包scss
 
 function watchfile() {

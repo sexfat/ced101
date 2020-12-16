@@ -190,10 +190,13 @@ exports.imgmin = series(clearImg, img);
 const babel = require('gulp-babel');
 
 function babels() {
-    return src('js/*.js')
+    return src('js/es6.js')
     .pipe(babel({
         presets: ['@babel/env']
     }))
+    .pipe(rename(function (path) {
+        path.basename += "-es5"; // 檔名
+    })) // 更改名稱
     .pipe(dest('dist/js'))
 }
 

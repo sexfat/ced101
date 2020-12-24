@@ -1,6 +1,6 @@
 const path = require('path'); 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //打包css
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //打包html
 
 
 

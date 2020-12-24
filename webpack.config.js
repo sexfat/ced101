@@ -3,12 +3,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
-       index : './src/app.js' 
+       index : './src/app.js',   // chunk name
+       index2 : './src/app2.js'   // chunk name
     },          // 入口文件
     output: {
         // path: path.resolve(__dirname, 'app/js/'), // 資料夾路徑
         path: path.resolve(__dirname, 'dist'), // 資料夾路徑
-        filename: '[name].js'
+        filename: '[name].js'  //name chunk
       },           // 出口文件
       module: {
         rules: [{
@@ -30,7 +31,7 @@ module.exports = {
     }, // 處裡對應模組
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./[name].css" //output 打包出來的檔案名稱
+            filename: "./[name].css" //output 打包出來的檔案名稱  //name chunk
         })
     ],            // 對應的插件
     // devServer: {},           // 服務器配置

@@ -1,6 +1,7 @@
 // import $ from 'jquery';
 import { TweenMax } from 'gsap';
-import './style.css';
+import './style.scss';
+// import './style.css';
 // import Vue from 'vue';
 
 
@@ -15,8 +16,8 @@ import './style.css';
 
 // $('body').css('background-color' , '#444');
 TweenMax.to('.box01' , 1 , {
-    x: 400,
-    y: 400,
+    x: 100,
+    y: 200,
     rotation : 180
 })
 

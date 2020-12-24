@@ -1,0 +1,20 @@
+body {
+    background-color: #001eff;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+    h1 {
+        font-size: 100px;
+        color: rgb(60, 211, 108);
+        margin: 0;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(191, 255, 0);
+    }
+}

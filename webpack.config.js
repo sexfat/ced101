@@ -29,7 +29,8 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
             ],
-        }]
+        },
+    ]
 
     }, // 處裡對應模組
     plugins: [

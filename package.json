@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "open" : "webpack-dev-server",
-    "dev" : "webpack"
+    "open": "webpack-dev-server",
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/sexfat/ced101#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.3.3",

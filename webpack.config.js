@@ -10,11 +10,12 @@ module.exports = {
       module: {
         rules: [{
             // 格式
-            test: /\.css$/,
+            test: /\.(sass|scss|css)$/,
             //順序是由下到上 css > style
             use: [
                 'style-loader',
-                'css-loader'
+                'css-loader',
+                'sass-loader'
             ],
         }]
 

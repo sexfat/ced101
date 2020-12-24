@@ -1,4 +1,5 @@
 const path = require('path'); 
+const webpack  = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //打包css
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //打包html
 const {
@@ -58,16 +59,22 @@ module.exports = {
             template : './src/aboutus.html',
             //目的地
             filename : 'aboutus.html'
+          }),
+          //全域載入jq
+          new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
           })
 
     ],// 對應的插件
     devServer: {
         contentBase: './dist',
+        compress: true,// html 壓縮
         host: 'localhost',
         port: 3000,
         index: 'index.html',
         open: true
 
     },           // 服務器配置
-    mode: 'production'      // 開發模式配置 development  / production 產品上線
+    //mode: 'production'      // 開發模式配置 development  / production 產品上線
 }

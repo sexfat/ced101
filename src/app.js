@@ -8,7 +8,7 @@ import Vue from 'vue';
 new Vue({
     el : '#app',
     data : {
-       message : 'hello vue' 
+       message : '測試 vue' 
     }
 })
 

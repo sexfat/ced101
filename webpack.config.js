@@ -76,5 +76,11 @@ module.exports = {
         open: true
 
     },           // 服務器配置
+     //解決vue jquery 路徑
+     resolve: {
+      alias: {
+         vue: 'vue/dist/vue.js'
+      }
+    },
     //mode: 'production'      // 開發模式配置 development  / production 產品上線
 }

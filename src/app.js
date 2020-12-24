@@ -20,6 +20,14 @@ TweenMax.to('.box01' , 1 , {
     y: 200,
     rotation : 180,
     backgroundColor: '#333'
-})
+});
+
+
+const callsomeone =  (someone) => {
+    return someone  + '你好'  
+  }
+  
+  
+document.getElementById('person').innerHTML = callsomeone('aa')
 
 console.log('動畫執行 安裝完成');

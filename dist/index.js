@@ -114,4 +114,4 @@ r.e._gsDefine("easing.Back",["easing.Ease"],(function(){var t,e,i,s,n=r.e.GreenS
  *
  * @author: Jack Doyle, jack@greensock.com
  **/
-N.to(".box01",1,{x:100,y:200,rotation:180}),console.log("動畫執行 安裝完成")}]);
+N.to(".box01",1,{x:500,y:200,rotation:180,backgroundColor:"#333"});document.getElementById("person").innerHTML="aa"+"你好",console.log("動畫執行 安裝完成")}]);

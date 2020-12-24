@@ -1,6 +1,9 @@
 const path = require('path'); 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //打包css
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //打包html
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin'); //清除舊檔案
 
 
 
@@ -29,11 +32,14 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
             ],
-        },
+        }
     ]
 
     }, // 處裡對應模組
     plugins: [
+        //清除舊檔案
+        new CleanWebpackPlugin(),
+
         new MiniCssExtractPlugin({
             filename: "./[name].css" //output 打包出來的檔案名稱  //name chunk
         }),

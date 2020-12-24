@@ -9,5 +9,5 @@ module.exports = {
     // module: {},              // 處裡對應模組
     // plugins: [],             // 對應的插件
     // devServer: {},           // 服務器配置
-    mode: 'development'      // 開發模式配置
+    mode: 'production'      // 開發模式配置 development  / production 產品上線
 }

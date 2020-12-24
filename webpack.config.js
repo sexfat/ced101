@@ -66,7 +66,7 @@ module.exports = {
             jQuery: 'jquery'
           })
 
-    ],// 對應的插件
+    ], // 服務器配置
     devServer: {
         contentBase: './dist',
         compress: true,// html 壓縮
@@ -75,7 +75,7 @@ module.exports = {
         index: 'index.html',
         open: true
 
-    },           // 服務器配置
+    }, 
      //解決vue jquery 路徑
      resolve: {
       alias: {

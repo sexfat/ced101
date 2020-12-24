@@ -12,6 +12,13 @@ new Vue({
     }
 })
 
+var app3 = new Vue({
+  el: '#app-3',
+  data: {
+    seen: true
+  }
+})
+
 
 
 // $('body').css('background-color' , '#444');

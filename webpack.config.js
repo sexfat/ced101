@@ -2,11 +2,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/app.js',               // 入口文件
+    entry: {
+       index : './src/app.js' 
+    },          // 入口文件
     output: {
         // path: path.resolve(__dirname, 'app/js/'), // 資料夾路徑
         path: path.resolve(__dirname, 'dist'), // 資料夾路徑
-        filename: 'bundle.js'
+        filename: '[name].js'
       },           // 出口文件
       module: {
         rules: [{
@@ -28,7 +30,7 @@ module.exports = {
     }, // 處裡對應模組
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./style.css" //output 打包出來的檔案名稱
+            filename: "./[name].css" //output 打包出來的檔案名稱
         })
     ],            // 對應的插件
     // devServer: {},           // 服務器配置

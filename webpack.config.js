@@ -19,7 +19,7 @@ module.exports = {
                       publicPath: './dist'
                     }
                   },
-                // 'style-loader',
+                // 'style-loader',//跟MiniCssExtractPlugin 會衝突所以要關掉
                 'css-loader',
                 'sass-loader'
             ],
@@ -28,7 +28,7 @@ module.exports = {
     }, // 處裡對應模組
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./style.css"
+            filename: "./style.css" //output 打包出來的檔案名稱
         })
     ],            // 對應的插件
     // devServer: {},           // 服務器配置

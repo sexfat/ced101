@@ -53,7 +53,14 @@ module.exports = {
             filename : 'aboutus.html'
           })
 
-    ],            // 對應的插件
-    // devServer: {},           // 服務器配置
+    ],// 對應的插件
+    devServer: {
+        contentBase: './dist',
+        host: 'localhost',
+        port: 3000,
+        index: 'index.html',
+        open: true
+
+    },           // 服務器配置
     mode: 'production'      // 開發模式配置 development  / production 產品上線
 }

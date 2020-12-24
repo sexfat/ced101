@@ -16,9 +16,10 @@ import './style.scss';
 
 // $('body').css('background-color' , '#444');
 TweenMax.to('.box01' , 1 , {
-    x: 100,
+    x: 500,
     y: 200,
-    rotation : 180
+    rotation : 180,
+    backgroundColor: '#333'
 })
 
 console.log('動畫執行 安裝完成');

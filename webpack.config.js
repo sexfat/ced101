@@ -33,7 +33,19 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
             ],
-        }
+        },
+        {
+          test: /\.(js)$/,
+          exclude: /(node_modules)/,
+
+          use: [{
+              loader: 'babel-loader',
+              options: {
+                  presets: ['@babel/preset-env']
+              }
+          }],
+          include: path.resolve(__dirname, 'src'),
+      }
     ]
 
     }, // 處裡對應模組

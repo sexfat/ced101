@@ -39,6 +39,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             //來源
             chunks : ['index'],  //選擇注入資源 chunk
+            inject  : 'body', //預設<body> js </body>  head or body
             template : './src/index.html',
             //目的地
             filename : 'index.html'
@@ -46,6 +47,7 @@ module.exports = {
           new HtmlWebpackPlugin({
             //來源
             chunks : ['aboutus'],  //選擇注入資源 chunk
+            inject  : 'body',
             template : './src/aboutus.html',
             //目的地
             filename : 'aboutus.html'

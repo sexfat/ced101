@@ -1,17 +1,2 @@
-body {
-  background-color: #ceff7e;
-  padding: 0;
-  margin: 0; }
-
-.wrapper {
-  margin: 0 auto;
-  width: 1200px; }
-  .wrapper h1 {
-    font-size: 100px;
-    color: #3cd36c;
-    margin: 0; }
-  .wrapper .box {
-    width: 100px;
-    height: 100px;
-    background-color: #ff4400; }
+body{background-color:#ceff7e;padding:0;margin:0}.wrapper{margin:0 auto;width:1200px}.wrapper h1{font-size:100px;color:#3cd36c;margin:0}.wrapper .box{width:100px;height:100px;background-color:#f40}
 

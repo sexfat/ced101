@@ -1,14 +1,14 @@
 // import $ from 'jquery';
 import { TweenMax } from 'gsap';
-import Vue from 'vue';
+// import Vue from 'vue';
 
 
-new Vue({
-    el : '#app',
-    data : {
-       message : 'hello vue' 
-    }
-})
+// new Vue({
+//     el : '#app',
+//     data : {
+//        message : 'hello vue' 
+//     }
+// })
 
 
 

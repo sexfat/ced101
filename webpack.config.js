@@ -1,10 +1,13 @@
 const path = require('path'); 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 
 module.exports = {
     entry: {
        index : './src/app.js',   // chunk name
-       index2 : './src/app2.js'   // chunk name
+       aboutus : './src/app2.js'   // chunk name
     },          // 入口文件
     output: {
         // path: path.resolve(__dirname, 'app/js/'), // 資料夾路徑
@@ -32,7 +35,22 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "./[name].css" //output 打包出來的檔案名稱  //name chunk
-        })
+        }),
+        new HtmlWebpackPlugin({
+            //來源
+            chunks : ['index'],  //選擇注入資源 chunk
+            template : './src/index.html',
+            //目的地
+            filename : 'index.html'
+          }),
+          new HtmlWebpackPlugin({
+            //來源
+            chunks : ['aboutus'],  //選擇注入資源 chunk
+            template : './src/aboutus.html',
+            //目的地
+            filename : 'aboutus.html'
+          })
+
     ],            // 對應的插件
     // devServer: {},           // 服務器配置
     mode: 'production'      // 開發模式配置 development  / production 產品上線

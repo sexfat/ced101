@@ -12,10 +12,10 @@ import { TweenMax } from 'gsap';
 
 
 
-// $('body').css('background-color' , '#333');
+// $('body').css('background-color' , '#444');
 TweenMax.to('.box01' , 1 , {
-    x: 100,
-    y: 100,
+    x: 400,
+    y: 400,
     rotation : 180
 })
 

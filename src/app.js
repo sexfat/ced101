@@ -15,16 +15,17 @@ import './style.scss';
 
 
 // $('body').css('background-color' , '#444');
+// gsap
 TweenMax.to('.box01' , 1 , {
     x: 500,
     y: 200,
     rotation : 180,
     //backgroundColor: '#333'
 });
-
+//jquery
 $('.box01').css('background-color'  , '#000');
 
-
+//es6
 const callsomeone =  (someone) => {
     return someone  + '你好'  
   }

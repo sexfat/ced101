@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #d1fa00;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box m1">001</div>
+    <div class="box m2">002</div>
+    <div class="box m3">003</div>
+    
+
+
+    <script>
+
+
+var tl = new TimelineMax({
+    onComplete : updown
+});
+
+tl.to('.m1' , 1 , {
+    x: 100,
+}).to('.m2', 1 , {
+    y: 100,
+}).to('.m3' , 1 , {
+    x: 130,
+    y: 100
+})
+
+        
+
+function updown() {
+    TweenMax.to('.box' , 1 , {
+            y: '+=10',
+            repeat : -1,
+            yoyo : true,
+            opacity: .8
+        }) 
+    
+}
+
+
+
+
+
+    </script>
+</body>
+</html>

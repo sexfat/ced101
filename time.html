@@ -31,14 +31,20 @@ var tl = new TimelineMax({
     onComplete : updown
 });
 
-tl.to('.m1' , 1 , {
+var a = TweenMax.to('.m1' , 1 , {
     x: 100,
-}).to('.m2', 1 , {
+})
+ var b = TweenMax.to('.m2', 1 , {
     y: 100,
-}).to('.m3' , 1 , {
+})
+
+ var c = TweenMax.to('.m3' , 1 , {
     x: 130,
     y: 100
 })
+
+
+tl.add([a , b ,c ]);
 
         
 
